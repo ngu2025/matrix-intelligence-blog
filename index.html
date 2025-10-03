@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Intelligence Blog | Market Research Analytics</title>
+    
+    <!-- ТОЛЬКО БАЗОВЫЕ СТИЛИ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* БАЗОВЫЙ СБРОС */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', Arial, sans-serif; 
+            background: white; 
+            color: #333; 
+            line-height: 1.6; 
+        }
+        
+        /* КОНТЕЙНЕР */
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        /* ШАПКА */
+        .top-header {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo_main a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5282;
+            text-decoration: none;
+        }
+        
+        /* ГЛАВНЫЙ ЗАГОЛОВОК */
+        .main-hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .main-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .main-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        /* СЕТКА СТАТЕЙ */
+        .articles-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a365d;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .article-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .article-content {
+            padding: 25px;
+        }
+        
+        .article-category {
+            background: #4f46e5;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .article-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #1a365d;
+        }
+        
+        .article-content h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.85rem;
+        }
+        
+        /* ФУТЕР */
+        .footer-box {
+            background: #0f1a2b;
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-bottom {
+            background: #0a1120;
+            color: #a0aec0;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- ШАПКА -->
+    <header class="top-header">
+        <div class="container">
+            <div class="logo_main">
+                <a href="index.html">Matrix Intelligence Blog</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЗАГОЛОВОК -->
+    <section class="main-hero">
+        <div class="container">
+            <h1>Matrix Intelligence Blog</h1>
+            <p>Deep market research through matrix analytics</p>
+        </div>
+    </section>
+
+    <!-- СТАТЬИ -->
+    <section class="articles-section">
+        <div class="container">
+            <h2 class="section-title">Featured Research</h2>
+            
+            <div class="articles-grid">
+                <!-- СТАТЬЯ 1 -->
+<article class="article-card">
+    <div class="article-image">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=80" alt="Digital Health">
+    </div>
+    <div class="article-content">
+        <span class="article-category">HealthTech Research</span>
+        <h3><a href="articles/telemedicine-market-analysis/">Market Analysis Framework for Digital Health</a></h3>
+        <p class="article-excerpt">Comprehensive assessment of telemedicine investment potential across North American and European markets.</p>
+        <div class="article-meta">
+            <span>January 2025</span>
+            <span>8 min read</span>
+        </div>
+    </div>
+</article>
+
+                <!-- СТАТЬЯ 2 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=80" alt="SaaS Metrics">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category">SaaS Markets</span>
+                        <h3><a href="articles/saas-business-metrics/">SaaS Business Metrics: 2025 Analysis</a></h3>
+                        <p class="article-excerpt">Key performance indicators for SaaS companies and their analysis in current market conditions.</p>
+                        <div class="article-meta">
+                            <span>January 2025</span>
+                            <span>10 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- СТАТЬЯ 3 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=80" alt="FinTech">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category">FinTech Trends</span>
+                        <h3><a href="articles/fintech-evolution/">FinTech Evolution: Enterprise Solutions</a></h3>
+                        <p class="article-excerpt">Analysis of financial technology transformation and key success factors in modern markets.</p>
+                        <div class="article-meta">
+                            <span>January 2025</span>
+                            <span>12 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФУТЕР -->
+    <footer class="footer-box">
+        <div class="container">
+            <p>Market research analytics through matrix methodology</p>
+            <p>Deep insights for professionals</p>
+        </div>
+    </footer>
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© 2025 Matrix Intelligence Blog. Analytical blog for professionals.</p>
+        </div>
+    </div>
+</body>
+</html>
