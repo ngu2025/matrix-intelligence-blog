@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matrix Intelligence Blog | Market Research Analytics</title>
 
-  <!-- ТОЛЬКО БАЗОВЫЕ СТИЛИ -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* БАЗОВЫЙ СБРОС */
+    /* RESET */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', Arial, sans-serif;
       background: white;
       color: #333;
       line-height: 1.6;
+      padding-top: 100px; /* offset for fixed header */
     }
 
-    /* КОНТЕЙНЕР */
+    /* CONTAINER */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
-    /* ШАПКА */
+    /* HEADER */
     .top-header {
       background: white;
       padding: 20px 0;
@@ -42,140 +42,147 @@
       text-decoration: none;
     }
 
-    /* ГЛАВНЫЙ ЗАГОЛОВОК */
+    /* TOP WINDOWS (5 compact cards, aligned to container) */
+    .top-windows {
+      margin: 12px auto 24px;
+    }
+    .top-windows .container {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .top-windows .window {
+      flex: 0 0 220px;        /* compact fixed width */
+      max-width: 220px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      text-align: center;
+      padding: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: #fff;
+    }
+    .top-windows .window:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    }
+    .top-windows .window h3 {
+      margin: 0 0 6px;
+      font-size: 0.9em;      /* slightly smaller for English */
+      color: #203a43;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .top-windows .window p {
+      margin: 0 0 10px;
+      font-size: 0.8em;      /* compact text */
+      color: #555;
+      line-height: 1.3;
+    }
+    .top-windows .window-link {
+      display: inline-block;
+      background: #ffcc00;
+      color: #000;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.76em;     /* compact button */
+      line-height: 1;
+    }
+    .top-windows .window-link:hover {
+      background: #e6b800;
+    }
+
+    /* Card colors */
+    .top-windows .window:nth-child(1) { background: linear-gradient(135deg, #fff8e1, #ffffff); }
+    .top-windows .window:nth-child(2) { background: linear-gradient(135deg, #e8f5e9, #ffffff); }
+    .top-windows .window:nth-child(3) { background: linear-gradient(135deg, #f3e5f5, #ffffff); }
+    .top-windows .window:nth-child(4) { background: linear-gradient(135deg, #e1f5fe, #ffffff); }
+    .top-windows .window:nth-child(5) { background: linear-gradient(135deg, #fce4ec, #ffffff); }
+
+    /* HERO */
     .main-hero {
       background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
       color: white;
       padding: 150px 0 80px;
       text-align: center;
-      margin-top: 80px;
+      margin-top: 0; /* body already provides top offset */
     }
+    .main-hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .main-hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem; }
 
-    .main-hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
+    /* ARTICLES (unchanged baseline) */
+    .articles-section { padding: 80px 0; background: #f8f9fa; }
+    .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #1a365d; }
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+    .article-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+    .article-card:hover { transform: translateY(-5px); }
+    .article-image { height: 200px; overflow: hidden; }
+    .article-image img { width: 100%; height: 100%; object-fit: cover; }
+    .article-content { padding: 25px; }
+    .article-category { background: #4f46e5; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; display: inline-block; margin-bottom: 15px; }
+    .article-content h3 { font-size: 1.3rem; margin-bottom: 10px; color: #1a365d; }
+    .article-content h3 a { color: inherit; text-decoration: none; }
+    .article-excerpt { color: #666; margin-bottom: 15px; font-size: 0.95rem; }
+    .article-meta { display: flex; justify-content: space-between; color: #888; font-size: 0.85rem; }
 
-    .main-hero p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      margin-bottom: 2rem;
-    }
-
-    /* СЕТКА СТАТЕЙ */
-    .articles-section {
-      padding: 80px 0;
-      background: #f8f9fa;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
-      color: #1a365d;
-    }
-
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-    }
-
-    .article-card {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .article-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .article-image {
-      height: 200px;
-      overflow: hidden;
-    }
-
-    .article-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .article-content {
-      padding: 25px;
-    }
-
-    .article-category {
-      background: #4f46e5;
-      color: white;
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      display: inline-block;
-      margin-bottom: 15px;
-    }
-
-    .article-content h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: #1a365d;
-    }
-
-    .article-content h3 a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .article-excerpt {
-      color: #666;
-      margin-bottom: 15px;
-      font-size: 0.95rem;
-    }
-
-    .article-meta {
-      display: flex;
-      justify-content: space-between;
-      color: #888;
-      font-size: 0.85rem;
-    }
-
-    /* ФУТЕР */
-    .footer-box {
-      background: #0f1a2b;
-      color: white;
-      padding: 50px 0 20px;
-      text-align: center;
-    }
-
-    .footer-bottom {
-      background: #0a1120;
-      color: #a0aec0;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 0.9rem;
-    }
+    /* FOOTER */
+    .footer-box { background: #0f1a2b; color: white; padding: 50px 0 20px; text-align: center; }
+    .footer-bottom { background: #0a1120; color: #a0aec0; padding: 20px 0; text-align: center; font-size: 0.9rem; }
   </style>
 </head>
 <body>
-    <!-- ШАПКА -->
-    <header class="top-header">
-        <div class="container">
-            <div class="logo_main">
-                <a href="index.html">Matrix Intelligence Blog</a>
-            </div>
-        </div>
-    </header>
+  <!-- HEADER -->
+  <header class="top-header">
+    <div class="container">
+      <div class="logo_main">
+        <a href="index.html">Matrix Intelligence Blog</a>
+      </div>
+    </div>
+  </header>
 
-    <!-- ГЛАВНЫЙ ЗАГОЛОВОК -->
-    <section class="main-hero">
-        <div class="container">
-            <h1>Matrix Intelligence Blog</h1>
-            <p>Deep market research through matrix analytics</p>
-        </div>
-    </section>
+  <!-- TOP WINDOWS (5 cards, inside container) -->
+  <section class="top-windows">
+    <div class="container">
+      <div class="window">
+        <h3>Market Analysis</h3>
+        <p>Free initial research.</p>
+        <a href="#analysis" class="window-link">Explore</a>
+      </div>
+      <div class="window">
+        <h3>Sample Report</h3>
+        <p>Real case example.</p>
+        <a href="#report" class="window-link">View</a>
+      </div>
+      <div class="window">
+        <h3>Matrix Method</h3>
+        <p>Layered analytics.</p>
+        <a href="#matrix" class="window-link">Learn</a>
+      </div>
+      <div class="window">
+        <h3>Case Studies</h3>
+        <p>Proven insights.</p>
+        <a href="#cases" class="window-link">Read</a>
+      </div>
+      <div class="window">
+        <h3>Contact Us</h3>
+        <p>Get in touch.</p>
+        <a href="#contact" class="window-link">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO -->
+  <section class="main-hero">
+    <div class="container">
+      <h1>Matrix Intelligence Blog</h1>
+      <p>Deep market research through matrix analytics</p>
+    </div>
+  </section>
+</body>
+</html>
+
 
     <!-- СТАТЬИ -->
     <section class="articles-section">
