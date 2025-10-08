@@ -7,132 +7,227 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* RESET */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', Arial, sans-serif;
-      background: white;
-      color: #333;
-      line-height: 1.6;
-      padding-top: 100px; /* offset for fixed header */
-    }
+  /* RESET */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: white;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 100px;
+  }
 
-    /* CONTAINER */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+  /* CONTAINER */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
-    /* HEADER */
-    .top-header {
-      background: white;
-      padding: 20px 0;
-      border-bottom: 1px solid #eee;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
+  /* HEADER */
+  .top-header {
+    background: white;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
 
-    .logo_main a {
-      font-size: 24px;
-      font-weight: bold;
-      color: #2c5282;
-      text-decoration: none;
-    }
+  .logo_main a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c5282;
+    text-decoration: none;
+  }
 
-    /* TOP WINDOWS (5 compact cards, aligned to container) */
-    .top-windows {
-      margin: 12px auto 24px;
-    }
-    .top-windows .container {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .top-windows .window {
-      flex: 0 0 220px;        /* compact fixed width */
-      max-width: 220px;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-      text-align: center;
-      padding: 12px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      background: #fff;
-    }
-    .top-windows .window:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-    }
-    .top-windows .window h3 {
-      margin: 0 0 6px;
-      font-size: 0.9em;      /* slightly smaller for English */
-      color: #203a43;
-      font-weight: 600;
-      line-height: 1.2;
-    }
-    .top-windows .window p {
-      margin: 0 0 10px;
-      font-size: 0.8em;      /* compact text */
-      color: #555;
-      line-height: 1.3;
-    }
-    .top-windows .window-link {
-      display: inline-block;
-      background: #ffcc00;
-      color: #000;
-      padding: 5px 12px;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.76em;     /* compact button */
-      line-height: 1;
-    }
-    .top-windows .window-link:hover {
-      background: #e6b800;
-    }
+  /* TOP WINDOWS */
+  .top-windows {
+    margin: 12px auto 24px;
+  }
+  .top-windows .container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .top-windows .window {
+    flex: 0 0 220px;
+    max-width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    padding: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: #fff;
+  }
+  .top-windows .window:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  }
+  .top-windows .window h3 {
+    margin: 0 0 6px;
+    font-size: 0.9em;
+    color: #203a43;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .top-windows .window p {
+    margin: 0 0 10px;
+    font-size: 0.8em;
+    color: #555;
+    line-height: 1.3;
+  }
+  .top-windows .window-link {
+    display: inline-block;
+    background: #ffcc00;
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.76em;
+    line-height: 1;
+  }
+  .top-windows .window-link:hover {
+    background: #e6b800;
+  }
 
-    /* Card colors */
-    .top-windows .window:nth-child(1) { background: linear-gradient(135deg, #fff8e1, #ffffff); }
-    .top-windows .window:nth-child(2) { background: linear-gradient(135deg, #e8f5e9, #ffffff); }
-    .top-windows .window:nth-child(3) { background: linear-gradient(135deg, #f3e5f5, #ffffff); }
-    .top-windows .window:nth-child(4) { background: linear-gradient(135deg, #e1f5fe, #ffffff); }
-    .top-windows .window:nth-child(5) { background: linear-gradient(135deg, #fce4ec, #ffffff); }
+  .top-windows .window:nth-child(1) { background: linear-gradient(135deg, #fff8e1, #ffffff); }
+  .top-windows .window:nth-child(2) { background: linear-gradient(135deg, #e8f5e9, #ffffff); }
+  .top-windows .window:nth-child(3) { background: linear-gradient(135deg, #f3e5f5, #ffffff); }
+  .top-windows .window:nth-child(4) { background: linear-gradient(135deg, #e1f5fe, #ffffff); }
+  .top-windows .window:nth-child(5) { background: linear-gradient(135deg, #fce4ec, #ffffff); }
 
-    /* HERO */
-    .main-hero {
-      background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
-      color: white;
-      padding: 150px 0 80px;
-      text-align: center;
-      margin-top: 0; /* body already provides top offset */
-    }
-    .main-hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .main-hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem; }
+  /* HERO */
+  .main-hero {
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    color: white;
+    padding: 150px 0 80px;
+    text-align: center;
+    margin-top: 0;
+  }
+  .main-hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+  .main-hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem; }
 
-    /* ARTICLES (unchanged baseline) */
-    .articles-section { padding: 80px 0; background: #f8f9fa; }
-    .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #1a365d; }
-    .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-    .article-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-    .article-card:hover { transform: translateY(-5px); }
-    .article-image { height: 200px; overflow: hidden; }
-    .article-image img { width: 100%; height: 100%; object-fit: cover; }
-    .article-content { padding: 25px; }
-    .article-category { background: #4f46e5; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; display: inline-block; margin-bottom: 15px; }
-    .article-content h3 { font-size: 1.3rem; margin-bottom: 10px; color: #1a365d; }
-    .article-content h3 a { color: inherit; text-decoration: none; }
-    .article-excerpt { color: #666; margin-bottom: 15px; font-size: 0.95rem; }
-    .article-meta { display: flex; justify-content: space-between; color: #888; font-size: 0.85rem; }
+  /* ARTICLES */
+  .articles-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1a365d;
+  }
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+  .article-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  .article-card:hover {
+    transform: translateY(-5px);
+  }
+  .article-image {
+    height: 200px;
+    overflow: hidden;
+  }
+  .article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .article-content {
+    padding: 25px;
+  }
+  .article-category {
+    background: #4f46e5;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  .article-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #1a365d;
+  }
+  .article-content h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .article-excerpt {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+  }
+  .article-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+    font-size: 0.85rem;
+  }
 
-    /* FOOTER */
-    .footer-box { background: #0f1a2b; color: white; padding: 50px 0 20px; text-align: center; }
-    .footer-bottom { background: #0a1120; color: #a0aec0; padding: 20px 0; text-align: center; font-size: 0.9rem; }
-  </style>
+  /* MOTIVATIONAL CARDS */
+  .article-card.motivational {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
+  .article-card.motivational:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  }
+  .article-card.motivational .article-category {
+    background: #0077b6;
+    color: #fff;
+  }
+  .article-card.motivational h3 {
+    color: #0f172a;
+  }
+  .article-card.motivational .article-excerpt {
+    color: #444;
+    font-style: italic;
+  }
+
+  /* INDIVIDUAL COLOR TONES */
+  .article-card.motivational.tone-1 { background: linear-gradient(135deg, #fff8e1, #ffffff); }
+  .article-card.motivational.tone-2 { background: linear-gradient(135deg, #e8f5e9, #ffffff); }
+  .article-card.motivational.tone-3 { background: linear-gradient(135deg, #f3e5f5, #ffffff); }
+  .article-card.motivational.tone-4 { background: linear-gradient(135deg, #e1f5fe, #ffffff); }
+  .article-card.motivational.tone-5 { background: linear-gradient(135deg, #fce4ec, #ffffff); }
+  .article-card.motivational.tone-6 { background: linear-gradient(135deg, #ede7f6, #ffffff); }
+
+  /* FOOTER */
+  .footer-box {
+    background: #0f1a2b;
+    color: white;
+    padding: 50px 0 20px;
+    text-align: center;
+  }
+  .footer-bottom {
+    background: #0a1120;
+    color: #a0aec0;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+</style>
+
 </head>
 <body>
+
+  
   <!-- HEADER -->
   <header class="top-header">
     <div class="container">
@@ -212,9 +307,31 @@
   </div>
 </article>
 
+<!-- ARTICLE -->
+<article class="article-card motivational tone-1">
+  <div class="article-image">
+    <img src="images/edtech_insight_02.jpg" alt="EdTech Innovation">
+  </div>
+  <div class="article-content">
+    <span class="article-category">EdTech Innovation</span>
+    <h3>
+      <a href="articles/edtech-innovation.html">Reimagining Learning Platforms</a>
+    </h3>
+    <p class="article-excerpt">
+      How AI-driven personalization and gamification are reshaping digital education in 2025.
+    </p>
+    <div class="article-meta">
+      <span>January 2025</span>
+      <span>6 min read</span>
+    </div>
+  </div>
+</article>
 
 
-<!-- ARTICLE 2 -->
+
+
+
+<!-- ARTICLE 3 -->
 <article class="article-card">
   <div class="article-image">
     <img src="images/enterprise_saas_insight_04.jpg" alt="Enterprise SaaS Efficiency">
@@ -232,7 +349,7 @@
   </div>
 </article>
 
-<!-- ARTICLE 3 -->
+<!-- ARTICLE 4 -->
 <article class="article-card">
   <div class="article-image">
     <img src="images/fintech_payments_insight_03.jpg" alt="FinTech Payments Innovation">
@@ -250,7 +367,7 @@
   </div>
 </article>
 
-<!-- ARTICLE 4 -->
+<!-- ARTICLE 5 -->
 <article class="article-card">
   <div class="article-image">
     <img src="images/edtech_insight_03.jpg" alt="EdTech Innovation">
@@ -268,7 +385,28 @@
   </div>
 </article>
 
-<!-- ARTICLE 5 -->
+<!-- ARTICLE 6 -->
+<article class="article-card motivational tone-2">
+  <div class="article-image">
+    <img src="images/edtech_insight_06.jpg" alt="Market Pulse">
+  </div>
+  <div class="article-content">
+    <span class="article-category">Market Intelligence</span>
+    <h3>
+      <a href="articles/market-pulse.html">Feel the Rhythm of Your Market</a>
+    </h3>
+    <p class="article-excerpt">
+      Matrix analysis reveals hidden trends and behavioral patterns — the pulse of your industry.
+    </p>
+    <div class="article-meta">
+      <span>October 2025</span>
+      <span>6 min read</span>
+    </div>
+  </div>
+</article>
+
+
+<!-- ARTICLE 7 -->
 <article class="article-card">
   <div class="article-image">
     <img src="images/search_ai_saas_insight_01.jpg" alt="AI Search in Enterprise">
@@ -286,7 +424,27 @@
   </div>
 </article>
 
-<!-- ARTICLE 6 -->
+<!-- ARTICLE 8 -->
+<article class="article-card motivational tone-3">
+  <div class="article-image">
+    <img src="images/data_insight_analytics_08.jpg" alt="AI Search in Enterprise">
+  </div>
+  <div class="article-content">
+    <span class="article-category">Search & AI SaaS</span>
+    <h3>
+      <a href="articles/ai-search-enterprise.html">AI-Powered Search for Enterprise Knowledge</a>
+    </h3>
+    <p class="article-excerpt">
+      How intelligent search platforms transform enterprise workflows, boost productivity, and unlock hidden insights.
+    </p>
+    <div class="article-meta">
+      <span>January 2025</span>
+      <span>7 min read</span>
+    </div>
+  </div>
+</article>
+
+<!-- ARTICLE 9 -->
 <article class="article-card">
   <div class="article-image">
     <img src="images/enterprise_saas_insight_04.jpg" alt="Enterprise SaaS Efficiency">
@@ -304,8 +462,27 @@
   </div>
 </article>
 
+<!-- ARTICLE 10 -->
+<article class="article-card motivational tone-4">
+  <div class="article-image">
+    <img src="images/leadership_inspiration_010.jpg" alt="Enterprise SaaS Efficiency">
+  </div>
+  <div class="article-content">
+    <span class="article-category">Enterprise SaaS</span>
+    <h3>
+      <a href="articles/enterprise-saas-metrics.html">Enterprise SaaS Efficiency Metrics</a>
+    </h3>
+    <p class="article-excerpt">
+      Key performance indicators for SaaS platforms and how they drive operational success in 2025.
+    </p>
+    <div class="article-meta">
+      <span>January 2025</span>
+      <span>10 min read</span>
+    </div>
+  </div>
+</article>
 
-<!-- ARTICLE 7 -->
+<!-- ARTICLE 11 -->
 <article class="article-card">
   <div class="article-image">
     <img src="images/insurtech_insight_07.jpg" alt="InsurTech Innovation">
@@ -327,7 +504,7 @@
   </div>
 </article>
 
-<!-- ARTICLE 8 -->
+<!-- ARTICLE 12 -->
 <article class="article-card">
   <div class="article-image">
     <img src="images/retail_ecommerce_insight_08.jpg" alt="Retail & E-commerce Analytics">
@@ -349,7 +526,7 @@
   </div>
 </article>
 
-<!-- ARTICLE 9 -->
+<!-- ARTICLE 13 -->
 <article class="article-card">
   <div class="article-image">
     <img src="images/marketing_sales_saas_insight_09.jpg" alt="Marketing & Sales SaaS">
@@ -371,10 +548,10 @@
   </div>
 </article>
 
-<!-- ARTICLE 10 -->
-<article class="article-card">
+<!-- ARTICLE 14 -->
+<article class="article-card motivational tone-5">
   <div class="article-image">
-    <img src="images/devtools_api_insight_10.jpg" alt="DevTools & API Platforms">
+    <img src="images/team_brainstorming_014.jpg" alt="DevTools & API Platforms">
   </div>
   <div class="article-content">
     <span class="article-category">DevTools & API</span>
@@ -393,7 +570,8 @@
   </div>
 </article>
 
-<!-- ARTICLE 11 -->
+
+<!-- ARTICLE 15 -->
 <article class="article-card">
   <div class="article-image">
     <img src="images/industrial_saas_insight_11.jpg" alt="Industrial SaaS">
@@ -415,7 +593,51 @@
   </div>
 </article>
 
-<!-- ARTICLE 12 -->
+<!-- ARTICLE 16 -->
+<article class="article-card">
+  <div class="article-image">
+    <img src="images/industrial_saas_insight_11.jpg" alt="Industrial SaaS">
+  </div>
+  <div class="article-content">
+    <span class="article-category">Industrial SaaS</span>
+    <h3>
+      <a href="articles/industrial-saas-transformation.html">
+        Industrial SaaS & Digital Factories
+      </a>
+    </h3>
+    <p class="article-excerpt">
+      How predictive analytics and digital twins are transforming manufacturing and enterprise operations.
+    </p>
+    <div class="article-meta">
+      <span>January 2025</span>
+      <span>8 min read</span>
+    </div>
+  </div>
+</article>
+
+<!-- ARTICLE 17 -->
+<article class="article-card motivational tone-6">
+  <div class="article-image">
+    <img src="images/focused_productivity_017.jpg" alt="Content & Social Platforms">
+  </div>
+  <div class="article-content">
+    <span class="article-category">Content & Social</span>
+    <h3>
+      <a href="articles/content-platform-monetization.html">
+        Monetization Models for Content Platforms
+      </a>
+    </h3>
+    <p class="article-excerpt">
+      Subscription tiers, ad strategies, and consumer behavior shaping the future of digital content.
+    </p>
+    <div class="article-meta">
+      <span>January 2025</span>
+      <span>7 min read</span>
+    </div>
+  </div>
+</article>
+
+<!-- ARTICLE 18 -->
 <article class="article-card">
   <div class="article-image">
     <img src="images/content_social_insight_12.jpg" alt="Content & Social Platforms">
