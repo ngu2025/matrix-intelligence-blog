@@ -1,0 +1,470 @@
+/* TECHNOLOGIES PAGE SPECIFIC STYLES - OPTIMIZED VERSION */
+
+/* ===== IMPROVED COLOR SCHEME ===== */
+:root {
+    --primary-dark: #2c3e50;      /* Deep blue-gray for main text */
+    --primary-blue: #3498db;      /* Professional blue for accents */
+    --secondary-blue: #2980b9;    /* Darker blue for hover states */
+    --accent-teal: #1abc9c;       /* Professional teal for highlights */
+    --light-bg: #f8f9fa;          /* Clean light background */
+    --card-bg: #ffffff;           /* Pure white for cards */
+    --border-light: #e0e0e0;      /* Subtle borders */
+    --text-dark: #2c3e50;         /* High contrast text */
+    --text-medium: #566573;       /* Medium contrast text */
+    --text-light: #7f8c8d;        /* Light text for subtitles */
+}
+
+/* Hero Section - IMPROVED CONTRAST */
+.methodology-hero {
+    background: linear-gradient(135deg, var(--light-bg) 0%, var(--card-bg) 100%);
+    color: var(--text-dark);
+    padding: 80px 0 50px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.methodology-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-medium);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.methodology-badge {
+    display: inline-block;
+    background: var(--primary-blue);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+/* Methodology Overview - IMPROVED SYMMETRY */
+.methodology-overview {
+    padding: 80px 0;
+    background: var(--card-bg);
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-intro h2 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+}
+
+.section-intro h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-blue);
+    border-radius: 2px;
+}
+
+.section-intro p {
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    max-width: 600px;
+    margin: 25px auto 0;
+    line-height: 1.6;
+}
+
+/* IMPROVED GRID SYMMETRY */
+.methodology-levels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.level-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 30px 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 320px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+.level-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-teal));
+    border-radius: 12px 12px 0 0;
+}
+
+.level-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-blue);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.level-number {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.level-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.level-card p {
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.level-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.level-features span {
+    background: var(--light-bg);
+    color: var(--primary-blue);
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid var(--border-light);
+    font-weight: 500;
+}
+
+/* Projects Showcase - IMPROVED LAYOUT */
+.projects-showcase {
+    padding: 80px 0;
+    background: var(--light-bg);
+}
+
+.project-category {
+    margin-bottom: 50px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.project-category h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-blue);
+    font-weight: 600;
+}
+
+.category-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    border-color: var(--primary-blue);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+.project-card h4 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.project-card p {
+    color: var(--text-medium);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.project-links a {
+    background: var(--light-bg);
+    color: var(--primary-blue);
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.project-links a:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Benefits Section - ENHANCED VISUAL HIERARCHY */
+.methodology-benefits {
+    padding: 80px 0;
+    background: var(--card-bg);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-light);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-color: var(--primary-blue);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.benefit-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.benefit-card p {
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* CTA Section - IMPROVED VISUAL IMPACT */
+.methodology-cta {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+}
+
+.cta-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    text-align: center;
+}
+
+.cta-button.primary {
+    background: white;
+    color: var(--primary-blue);
+    box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+}
+
+.cta-button.primary:hover {
+    background: var(--light-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255,255,255,0.3);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-button.secondary:hover {
+    background: white;
+    color: var(--primary-blue);
+    transform: translateY(-3px);
+}
+
+/* Footer - CONSISTENT STYLING */
+.footer-minimal {
+    background: var(--primary-dark);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-minimal p {
+    margin: 5px 0;
+    opacity: 0.8;
+}
+
+/* ===== RESPONSIVE IMPROVEMENTS ===== */
+@media (max-width: 1200px) {
+    .methodology-levels {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .methodology-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .methodology-levels {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .category-projects {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-category {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .section-intro h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .methodology-hero {
+        padding: 60px 0 40px;
+    }
+    
+    .level-card {
+        padding: 25px 20px;
+        min-height: 280px;
+    }
+    
+    .project-card {
+        padding: 20px;
+    }
+    
+    .project-links {
+        justify-content: center;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: 1.1rem;
+    }
+}

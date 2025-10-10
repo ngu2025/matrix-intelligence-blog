@@ -1,0 +1,27 @@
+/* FAQ SPECIFIC STYLES */
+
+.faq-hero {
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    color: white;
+    padding: 120px 0 60px;
+    text-align: center;
+    margin-top: 0;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-left: 4px solid #4f46e5;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Остальные специфичные стили для FAQ */
